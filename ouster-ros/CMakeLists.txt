@@ -6,6 +6,11 @@ include(DefaultBuildType)
 # ==== Project Name ====
 project(ouster_ros)
 
+# Set the default build type to Release if not specified
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Choose the type of build (Debug, Release, RelWithDebInfo, MinSizeRel)" FORCE)
+endif()
+
 # ==== Requirements ====
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
